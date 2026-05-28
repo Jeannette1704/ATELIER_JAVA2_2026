@@ -1,7 +1,7 @@
 # Atelier Java 2026
 
-Application web JSP servant de support aux exercices Java (boucles, conditions,
-chaînes de caractères, tableaux).
+Application web JSP servant de support aux exercices de **programmation orientée
+objet** en Java (objets, constructeurs, polymorphisme).
 
 Le déploiement se fait automatiquement sur un serveur Tomcat hébergé sur AWS EC2,
 via GitHub Actions, à chaque `Commit` sur votre dépôt.
@@ -106,13 +106,11 @@ http://ec2-35-180-71-137.eu-west-3.compute.amazonaws.com/<votre_prénom>
 Sur la page d'accueil de votre application en ligne, vous trouverez la liste des
 exercices à réaliser :
 
-- Les boucles (`lesboucles.jsp`)
-- Les conditions (`lesconditions.jsp`)
-- Les chaînes de caractères (`leschaines.jsp`)
-- Les tableaux (`lestableaux.jsp`)
-
-> Les exercices de base de données (`Select_BDD.jsp`) ne sont **pas** à traiter
-> dans cette série.
+- Les objets (`lesobjets.jsp`) — classes, attributs, méthodes, encapsulation
+- Les constructeurs (`lesconstructeurs.jsp`) — constructeur par défaut, surcharge,
+  chaînage avec `this()`, constructeur de copie
+- Le polymorphisme (`lepolymorphisme.jsp`) — héritage, redéfinition de méthodes,
+  classes abstraites, interfaces, `instanceof`
 
 Modifiez les fichiers `xxxx.jsp` directement dans votre dépôt forké. Chaque `Commit`
 redéploie automatiquement votre application sur le serveur en ligne.
