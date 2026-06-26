@@ -124,3 +124,4 @@ redéploie automatiquement votre application sur le serveur en ligne.
 3. Ce WAR est copié par SCP dans `/opt/tomcat/webapps/` sur le serveur EC2.
 4. Tomcat détecte le nouveau WAR et déploie automatiquement l'application
    sous le contexte `/<prénom>`.
+Dépôt configuré par Jeannette !
