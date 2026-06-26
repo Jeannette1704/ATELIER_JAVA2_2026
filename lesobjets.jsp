@@ -63,12 +63,32 @@ if (nom != null && age != null && !nom.isEmpty() && !age.isEmpty()) {
 
     <h2>Exercice 2 : Ajouter une méthode à la classe Personne</h2>
     <p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type : "Je m'appelle Marie et j'ai 25 ans". Appeler cette méthode sur l'objet p et afficher le résultat.</p>
-
+<%
+// On vérifie si l'utilisateur a créé une personne avec le formulaire tout en haut
+if (p != null) {
+    out.println("<p><b>Résultat de seDecrire() :</b> " + p.seDecrire() + "</p>");
+} else {
+    out.println("<p><i>(Utilise le formulaire tout en haut pour tester cet exercice !)</i></p>");
+}
+%>
     <h2>Exercice 3 : La classe Rectangle</h2>
     <p>Créer une classe <code>Rectangle</code> avec les attributs <code>longueur</code> et <code>largeur</code>.<br>
     Ajouter une méthode <code>calculerSurface()</code> qui retourne la surface du rectangle.<br>
     Instancier un rectangle, lui affecter des valeurs, et afficher sa surface.</p>
+<%
+// 1. Instanciation du rectangle
+Rectangle monRectangle = new Rectangle();
 
+// 2. Affectation des valeurs
+monRectangle.longueur = 10;
+monRectangle.largeur = 5;
+
+// 3. Calcul et affichage de la surface
+int surface = monRectangle.calculerSurface();
+out.println("<p><b>Longueur :</b> " + monRectangle.longueur + " cm</p>");
+out.println("<p><b>Largeur :</b> " + monRectangle.largeur + " cm</p>");
+out.println("<p><b>Surface calculée :</b> " + surface + " cm²</p>");
+%>
     <br><br>
     <a href="index.html">Retour au sommaire</a>
 </body>
