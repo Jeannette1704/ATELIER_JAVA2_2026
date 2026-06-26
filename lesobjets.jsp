@@ -1,15 +1,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Les objets</title>
+    <title>Les objets</title>
 </head>
 <body bgcolor=white>
-<h1>Exercices sur les objets</h1>
-<form action="#" method="post">
-    <p>Saisir un nom : <input type="text" name="nom">
-    <p>Saisir un âge : <input type="text" name="age">
-    <p><input type="submit" value="Créer la personne">
-</form>
+    <h1>Exercices sur les objets</h1>
+    <form action="#" method="post">
+        <p>Saisir un nom : <input type="text" name="nom"></p>
+        <p>Saisir un âge : <input type="text" name="age"></p>
+        <p><input type="submit" value="Créer la personne"></p>
+    </form>
+
 <%-- Déclaration des classes --%>
 <%!
     class Personne {
@@ -23,61 +24,52 @@
         int annee;
     }
 %>
-%>
 
 <%-- Récupération des valeurs du formulaire --%>
-<% String nom = request.getParameter("nom"); %>
-<% String age = request.getParameter("age"); %>
+<% 
+String nom = request.getParameter("nom"); 
+String age = request.getParameter("age"); 
 
-<% if (nom != null && age != null && !nom.isEmpty() && !age.isEmpty()) { %>
-
-    <%-- Instanciation d'un objet Personne et affectation des attributs --%>
-    <% Personne p = new Personne(); %>
-    <% p.nom = nom; %>
-    <% p.age = Integer.parseInt(age); %>
-
-    <p>Objet Personne créé !</p>
-    <p>Nom : <%= p.nom %></p>
-    <p>Age : <%= p.age %> ans</p>
-
-<h2>Exercice 1 : La classe Voiture</h2>
-<p>Créer une classe <code>Voiture</code> avec les attributs <code>marque</code>, <code>modele</code> et <code>annee</code>.</br>
-Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiques.</p>
-<%
-// 1. Création de l'objet voiture
-Voiture maVoiture = new Voiture();
-
-// 2. Attribution des valeurs
-maVoiture.marque = "Peugeot";
-maVoiture.modele = "208";
-maVoiture.annee = 2022;
-
-// 3. Affichage sur la page web
-out.println("<p><b>Marque :</b> " + maVoiture.marque + "</p>");
-out.println("<p><b>Modèle :</b> " + maVoiture.modele + "</p>");
-out.println("<p><b>Année :</b> " + maVoiture.annee + "</p>");
+if (nom != null && age != null && !nom.isEmpty() && !age.isEmpty()) { 
+    // Instanciation d'un objet Personne et affectation des attributs
+    Personne p = new Personne();
+    p.nom = nom;
+    p.age = Integer.parseInt(age);
+    
+    out.println("<h3>Objet Personne créé !</h3>");
+    out.println("<p>Nom : " + p.nom + "</p>");
+    out.println("<p>Age : " + p.age + " ans</p>");
+}
 %>
-<h2>Exercice 2 : Ajouter une méthode à la classe Personne</h2>
-<p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type :</br>
-"Je m'appelle Marie et j'ai 25 ans".</br>
-Appeler cette méthode sur l'objet <code>p</code> et afficher le résultat.</p>
 
-<h2>Exercice 3 : La classe Rectangle</h2>
-<p>Créer une classe <code>Rectangle</code> avec les attributs <code>longueur</code> et <code>largeur</code>.</br>
-Ajouter une méthode <code>calculerSurface()</code> qui retourne la surface du rectangle.</br>
-Créer un rectangle de 5 par 3 et afficher sa surface.</p>
+    <hr>
 
-<h2>Exercice 4 : Le compte bancaire</h2>
-<p>Créer une classe <code>CompteBancaire</code> avec un attribut <code>solde</code>.</br>
-Ajouter deux méthodes : <code>deposer(double montant)</code> et <code>retirer(double montant)</code>.</br>
-Créer un compte, déposer 100€, retirer 30€, puis afficher le solde final.</p>
+    <h2>Exercice 1 : La classe Voiture</h2>
+    <p>Créer une classe <code>Voiture</code> avec les attributs <code>marque</code>, <code>modele</code> et <code>annee</code>. Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiques.</p>
+<%
+    // 1. Création de l'objet voiture
+    Voiture maVoiture = new Voiture();
 
-<h2>Exercice 5 : L'encapsulation</h2>
-<p>Modifier la classe <code>Personne</code> pour rendre les attributs <code>privés</code>.</br>
-Ajouter les getters et setters correspondants : <code>getNom()</code>, <code>setNom(...)</code>, <code>getAge()</code>, <code>setAge(...)</code>.</br>
-Adapter ensuite le code de la page pour utiliser ces accesseurs au lieu d'accéder directement aux attributs.</p>
+    // 2. Attribution des valeurs
+    maVoiture.marque = "Peugeot";
+    maVoiture.modele = "208";
+    maVoiture.annee = 2022;
 
-<% } %>
-<p><a href="index.html">Retour au sommaire</a></p>
+    // 3. Affichage sur la page web
+    out.println("<p><b>Marque :</b> " + maVoiture.marque + "</p>");
+    out.println("<p><b>Modèle :</b> " + maVoiture.modele + "</p>");
+    out.println("<p><b>Année :</b> " + maVoiture.annee + "</p>");
+%>
+
+    <h2>Exercice 2 : Ajouter une méthode à la classe Personne</h2>
+    <p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type : "Je m'appelle Marie et j'ai 25 ans". Appeler cette méthode sur l'objet p et afficher le résultat.</p>
+
+    <h2>Exercice 3 : La classe Rectangle</h2>
+    <p>Créer une classe <code>Rectangle</code> avec les attributs <code>longueur</code> et <code>largeur</code>.<br>
+    Ajouter une méthode <code>calculerSurface()</code> qui retourne la surface du rectangle.<br>
+    Instancier un rectangle, lui affecter des valeurs, et afficher sa surface.</p>
+
+    <br><br>
+    <a href="index.html">Retour au sommaire</a>
 </body>
 </html>
