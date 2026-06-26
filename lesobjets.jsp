@@ -10,31 +10,18 @@
     <p>Saisir un âge : <input type="text" name="age">
     <p><input type="submit" value="Créer la personne">
 </form>
-
-<%-- Déclaration d'une classe Personne avec deux attributs --%>
+<%-- Déclaration des classes --%>
 <%!
     class Personne {
         String nom;
         int age;
     }
-class Voiture {
+
+    class Voiture {
         String marque;
         String modele;
         int annee;
     }
-<%
-// 1. Création de l'objet voiture
-Voiture maVoiture = new Voiture();
-
-// 2. Attribution des valeurs
-maVoiture.marque = "Peugeot";
-maVoiture.modele = "208";
-maVoiture.annee = 2022;
-
-// 3. Affichage sur la page web
-out.println("<p><b>Marque :</b> " + maVoiture.marque + "</p>");
-out.println("<p><b>Modèle :</b> " + maVoiture.modele + "</p>");
-out.println("<p><b>Année :</b> " + maVoiture.annee + "</p>");
 %>
 %>
 
@@ -56,7 +43,20 @@ out.println("<p><b>Année :</b> " + maVoiture.annee + "</p>");
 <h2>Exercice 1 : La classe Voiture</h2>
 <p>Créer une classe <code>Voiture</code> avec les attributs <code>marque</code>, <code>modele</code> et <code>annee</code>.</br>
 Instancier une voiture, lui affecter des valeurs et afficher ses caractéristiques.</p>
+<%
+// 1. Création de l'objet voiture
+Voiture maVoiture = new Voiture();
 
+// 2. Attribution des valeurs
+maVoiture.marque = "Peugeot";
+maVoiture.modele = "208";
+maVoiture.annee = 2022;
+
+// 3. Affichage sur la page web
+out.println("<p><b>Marque :</b> " + maVoiture.marque + "</p>");
+out.println("<p><b>Modèle :</b> " + maVoiture.modele + "</p>");
+out.println("<p><b>Année :</b> " + maVoiture.annee + "</p>");
+%>
 <h2>Exercice 2 : Ajouter une méthode à la classe Personne</h2>
 <p>Ajouter à la classe <code>Personne</code> une méthode <code>seDecrire()</code> qui retourne une chaîne du type :</br>
 "Je m'appelle Marie et j'ai 25 ans".</br>
